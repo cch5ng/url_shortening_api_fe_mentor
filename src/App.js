@@ -65,7 +65,7 @@ function App() {
 
 
     <div>
-      <h1>TODO</h1>
+      <h1 className="text-grey">TODO</h1>
 
 
   Features

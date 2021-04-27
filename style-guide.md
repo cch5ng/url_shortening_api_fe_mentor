@@ -2,6 +2,8 @@
 
 ## Layout
 
+X-done
+
 The designs were created to the following widths:
 
 - Mobile: 375px

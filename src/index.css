@@ -1,13 +1,33 @@
+:root {
+  --color-cyan: theme('colors.cyan');
+  --color-red: theme('colors.red');
+  --color-grey: theme('colors.grey');
+  --color-blue-darkest: theme('colors.blue.darkest');
+  --color-violet-darkest: theme('colors.violet.darkest');
+  --color-violet-dark: theme('colors.violet.dark');
+  --color-violet-neutral: theme('colors.violet.neutral');
+
+  /* ... */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
