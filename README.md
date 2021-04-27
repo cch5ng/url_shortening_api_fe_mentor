@@ -2,6 +2,8 @@
 
 * used Node 14.16.1
 
+* [browser support](https://tailwindcss.com/docs/browser-support) 
+
 ------
 
 # Getting Started with Create React App
