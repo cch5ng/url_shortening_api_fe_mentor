@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 //import logo from './logo.svg';
 import './App.css';
+import hero from './images/illustration-working.svg';
 
 function App() {
   const [url, setUrl] = useState('');
@@ -40,47 +41,62 @@ function App() {
 
   return (
     <div className="App">
+      <header> 
+        <div>logo</div>
+        <div>
+          Features
+          Pricing
+          Resources          
+        </div>
+        <div>
+          Login
+          Sign Up
+        </div>
+      </header>
+      <main>
+        <div className="section-container desktop:flex desktop:flex-row-reverse">
+          <div className="hero-image desktop:w-1/2">
+            <img src={hero} />
+          </div>
+          <div className="hero-text desktop:w-1/2 desktop:text-left">
+            <h1 className="desktop:text-7xl">More than just shorter links</h1>
+            <div className="desktop:text-2xl">
+              Build your brand’s recognition and get detailed insights on how your links are performing.
+            </div>
+            <button className="btn-round">Get Started</button>
+          </div>
+        </div>
+
+
+
+        <div>
+          <form>
+            <input type="text" name="url" placeholder="Shorten a link here..." value={url} 
+              onChange={inputOnChangeHandler}
+              />
+            <button onClick={buttonClickHandler}>Shorten It</button>
+          </form>
+          <div>
+            {error.length > 0 && (
+              <div>{error}</div>
+            )}
+          </div>
+          <div>
+            {shortUrls.map(shortUrl => {
+              return (
+                <div>{shortUrl.short_link}</div>
+              )
+            })}
+          </div>
+        </div>
+
+
+      </main>
+
+
+
 
     <div>
-      <form>
-        <input type="text" name="url" placeholder="Shorten a link here..." value={url} 
-          onChange={inputOnChangeHandler}
-          />
-        <button onClick={buttonClickHandler}>Shorten It</button>
-      </form>
-      <div>
-        {error.length > 0 && (
-          <div>{error}</div>
-        )}
-      </div>
-      <div>
-        {shortUrls.map(shortUrl => {
-          return (
-            <div>{shortUrl.short_link}</div>
-          )
-        })}
-      </div>
-    </div>
-
-
-
-    <div>
-      <h1 className="text-grey">TODO</h1>
-
-
-  Features
-  Pricing
-  Resources
-
-  Login
-  Sign Up
-
-  More than just shorter links
-
-  Build your brand’s recognition and get detailed insights 
-  on how your links are performing.
-
-  Get Started
   
   Shorten a link here...
 
