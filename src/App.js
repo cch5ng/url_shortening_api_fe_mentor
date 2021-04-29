@@ -3,6 +3,25 @@ import {useState, useEffect} from 'react';
 import './App.css';
 import hero from './images/illustration-working.svg';
 import UrlCard from './components/UrlCard';
+import brandRecognition from './images/icon-brand-recognition.svg';
+import detailedRecords from './images/icon-detailed-records.svg';
+import fullyCustomizable from './images/icon-fully-customizable.svg';
+import StatisticsCard from './components/StatisticsCard';
+
+const STATISTICS_CARDS = [
+  { 'heading': 'Brand Recognition',
+    'body': 'Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.',
+    'src': brandRecognition,
+  },
+  { 'heading': 'Detailed Records',
+    'body': 'Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.',
+    'src': detailedRecords,
+  },
+  { 'heading': 'Fully Customizable',
+    'body': 'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.',
+    'src': fullyCustomizable,
+  }
+];
 
 function App() {
   const [url, setUrl] = useState('');
@@ -97,38 +116,34 @@ function App() {
 
         {shortUrls.length > 0 && (
           <div className="section-container bg-grey">
-          <>
-            {shortUrls.map((shortUrl, idx) => {
-              return (
-                <UrlCard shortUrl={shortUrl} longUrl={longUrls[idx]}/>
-              )
-            })}
-          </>
-        </div>
+            <>
+              {shortUrls.map((shortUrl, idx) => {
+                return (
+                  <UrlCard shortUrl={shortUrl} longUrl={longUrls[idx]}/>
+                )
+              })}
+            </>
+          </div>
         )}
+
+        <div className="section-container bg-grey">
+          <div>
+            <h2>Advanced Statistics</h2>
+            <div>Track how your links are performing across the web with our advanced statistics dashboard.</div>
+          </div>
+          <div className="flex flex-col desktop:flex-row desktop:justify-between desktop:mt-8">
+              {STATISTICS_CARDS.map(card => (
+                <StatisticsCard heading={card.heading} body={card.body} src={card.src} />
+              ))}
+          </div>
+        </div>
 
       </main>
     <div>
   
-  Advanced Statistics
+  
 
-  Track how your links are performing across the web with our 
-  advanced statistics dashboard.
-
-  Brand Recognition
-
-  Boost your brand recognition with each click. Generic links don’t 
-  mean a thing. Branded links help instil confidence in your content.
-
-  Detailed Records
-
-  Gain insights into who is clicking your links. Knowing when and where 
-  people engage with your content helps inform better decisions.
-
-  Fully Customizable
-
-  Improve brand awareness and content discoverability through customizable 
-  links, supercharging audience engagement.
+  
 
   Boost your links today
 

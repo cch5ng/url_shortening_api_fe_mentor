@@ -27,6 +27,19 @@
     font-size: 2.2rem;
     color: theme('colors.violet.dark');
   }
+
+  h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: theme('colors.violet.dark');
+  }
+
+  h3 {
+    margin: 1.0rem 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: theme('colors.violet.dark');
+  }
 }
 
 body {
@@ -114,6 +127,26 @@ input {
   color: theme('colors.cyan');
 }
 
+.statistics_card_container {
+  padding: 5%;
+  background-color: #fff;
+  border-radius: 12px;
+  margin: 36px 12px;
+}
+
+.icon {
+  margin: -70px auto 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  background-color: theme('colors.violet.dark');
+}
+
+.icon_img {
+  padding-left: 25px;
+  padding-top: 25px;
+}
+
 @media (min-width: 1220px) {
 
   .form {
@@ -142,6 +175,11 @@ input {
     border-bottom: none;
   }
 
+  .icon {
+    margin-top: -100px;
+    margin-left: 0;
+  }
+  
 }
 
 /* code {
