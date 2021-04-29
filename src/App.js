@@ -2,9 +2,11 @@ import {useState, useEffect} from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import hero from './images/illustration-working.svg';
+import UrlCard from './components/UrlCard';
 
 function App() {
   const [url, setUrl] = useState('');
+  const [longUrls, setLongUrls] = useState([]);
   const [shortUrls, setShortUrls] = useState([]);
   const [error, setError] = useState('');
 
@@ -25,7 +27,10 @@ function App() {
         .then(json => {
           console.log('json', json)
           if (json.ok) {
-            let updatedUrls = shortUrls.concat([json.result]);
+            const {full_short_link3, original_link} = json.result;
+            let newLongUrls = longUrls.concat([original_link]);
+            let updatedUrls = shortUrls.concat([full_short_link3]);
+            setLongUrls(newLongUrls);
             setShortUrls(updatedUrls);
             setUrl('');
           } else {
@@ -76,6 +81,21 @@ function App() {
           <div className="form_element desktop:w-1/6">
             <button className="btn" onClick={buttonClickHandler}>Shorten It</button>
           </div>
+        </div>
+
+        <div className="section-container">
+          <div>
+            {error.length > 0 && (
+              <div>{error}</div>
+            )}
+          </div>
+          <>
+            {shortUrls.map((shortUrl, idx) => {
+              return (
+                <UrlCard shortUrl={shortUrl} longUrl={longUrls[idx]}/>
+              )
+            })}
+          </>
         </div>
 
       </main>
