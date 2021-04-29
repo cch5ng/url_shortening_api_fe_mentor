@@ -24,6 +24,9 @@ module.exports = {
         darkest: 'hsl(255, 11%, 22%)',
       }
     },
+    height: {
+      '50px': '50px',
+    },
   },
   variants: {
     extend: {},
