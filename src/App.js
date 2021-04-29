@@ -131,7 +131,7 @@ function App() {
             <h2>Advanced Statistics</h2>
             <div>Track how your links are performing across the web with our advanced statistics dashboard.</div>
           </div>
-          <div className="flex flex-col desktop:flex-row desktop:justify-between">
+          <div className="flex flex-col desktop:flex-row desktop:justify-between desktop:mt-8">
               {STATISTICS_CARDS.map(card => (
                 <StatisticsCard heading={card.heading} body={card.body} src={card.src} />
               ))}
