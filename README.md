@@ -1,4 +1,8 @@
-# Notes
+# URL Shortener README
+
+* dependencies, development account for bitly API
+
+* copy .example.env as .env and replace REACT_APP_BITLY_TOKEN with the token
 
 * used Node 14.16.1
 

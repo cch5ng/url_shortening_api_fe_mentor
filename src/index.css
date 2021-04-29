@@ -96,6 +96,10 @@ input {
   border-radius: 12px;
 }
 
+.btn_activated {
+  background-color: theme('colors.violet.dark');
+}
+
 .card-container {
   padding: 5%;
   background-color: #fff;

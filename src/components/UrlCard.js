@@ -21,6 +21,8 @@ function UrlCard({longUrl, shortUrl}) {
     });
   }
 
+  const btn_class = isUrlCopied ? "btn_activated btn desktop:btn_small" : "btn desktop:btn_small";
+
   return (
     <div className="card-container flex flex-col justify-center items-start w-full 
       desktop:flex-row desktop:items-center">
@@ -28,7 +30,7 @@ function UrlCard({longUrl, shortUrl}) {
       <div className="flex flex-col w-full desktop:flex-row desktop:items-center">
         <div className="short_url w-full">{shortUrl}</div>
         <div className="w-full">
-          <button className="btn desktop:btn_small" onClick={handleCopyClick}>{isUrlCopied ? 'Copied!': 'Copy'}</button>
+          <button className={btn_class} onClick={handleCopyClick}>{isUrlCopied ? 'Copied!': 'Copy'}</button>
         </div>
       </div>
     </div>

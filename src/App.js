@@ -20,16 +20,26 @@ function App() {
   const buttonClickHandler = (ev) => {
     setInputError('');
     ev.preventDefault();
-    const apiUrl = `https://api.shrtco.de/v2/shorten?url=`;
+    const apiUrl = `https://api-ssl.bitly.com/v4/shorten`;
+    const body = {
+      long_url: url,
+      domain: "bit.ly",
+    }
     if (url.length) {
-      fetch(`${apiUrl}${url}`)
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_BITLY_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body),
+      })
         .then(resp => resp.json())
         .then(json => {
-          console.log('json', json)
-          if (json.ok) {
-            const {full_short_link3, original_link} = json.result;
-            let newLongUrls = longUrls.concat([original_link]);
-            let updatedUrls = shortUrls.concat([full_short_link3]);
+          if (json && json.link) {
+            const {long_url, link} = json;
+            let newLongUrls = longUrls.concat([long_url]);
+            let updatedUrls = shortUrls.concat([link]);
             setLongUrls(newLongUrls);
             setShortUrls(updatedUrls);
             setUrl('');
@@ -42,9 +52,6 @@ function App() {
       setInputError('Please add a link');
     }
   }
-
-  // useEffect(() => {
-  // }, [])
 
   return (
     <div className="App">
@@ -156,20 +163,5 @@ function App() {
     </div>
   );
 }
-
-/*
-          <div>
-            {error.length > 0 && (
-              <div>{error}</div>
-            )}
-          </div>
-          <div>
-            {shortUrls.map(shortUrl => {
-              return (
-                <div>{shortUrl.short_link}</div>
-              )
-            })}
-          </div>
-*/
 
 export default App;
