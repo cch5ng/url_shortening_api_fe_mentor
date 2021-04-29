@@ -36,7 +36,6 @@ function App() {
       })
         .then(resp => resp.json())
         .then(json => {
-          console.log('json', json)
           if (json && json.link) {
             const {long_url, link} = json;
             let newLongUrls = longUrls.concat([long_url]);
@@ -53,9 +52,6 @@ function App() {
       setInputError('Please add a link');
     }
   }
-
-  // useEffect(() => {
-  // }, [])
 
   return (
     <div className="App">
@@ -167,20 +163,5 @@ function App() {
     </div>
   );
 }
-
-/*
-          <div>
-            {error.length > 0 && (
-              <div>{error}</div>
-            )}
-          </div>
-          <div>
-            {shortUrls.map(shortUrl => {
-              return (
-                <div>{shortUrl.short_link}</div>
-              )
-            })}
-          </div>
-*/
 
 export default App;
