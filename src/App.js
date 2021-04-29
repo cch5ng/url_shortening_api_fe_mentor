@@ -2,11 +2,13 @@ import {useState, useEffect} from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import hero from './images/illustration-working.svg';
+import UrlCard from './components/UrlCard';
 
 function App() {
   const [url, setUrl] = useState('');
+  const [longUrls, setLongUrls] = useState([]);
   const [shortUrls, setShortUrls] = useState([]);
-  const [error, setError] = useState('');
+  const [inputError, setInputError] = useState('');
 
   const inputOnChangeHandler = (ev) => {
     const {name, value} = ev.target;
@@ -16,7 +18,7 @@ function App() {
   }
 
   const buttonClickHandler = (ev) => {
-    setError('');
+    setInputError('');
     ev.preventDefault();
     const apiUrl = `https://api.shrtco.de/v2/shorten?url=`;
     if (url.length) {
@@ -25,14 +27,19 @@ function App() {
         .then(json => {
           console.log('json', json)
           if (json.ok) {
-            let updatedUrls = shortUrls.concat([json.result]);
+            const {full_short_link3, original_link} = json.result;
+            let newLongUrls = longUrls.concat([original_link]);
+            let updatedUrls = shortUrls.concat([full_short_link3]);
+            setLongUrls(newLongUrls);
             setShortUrls(updatedUrls);
             setUrl('');
           } else {
             console.log('todo handle err')
-            setError(json.error)
+            console.error('fetch short url issue', json.error)
           }
         })
+    } else {
+      setInputError('Please add a link');
     }
   }
 
@@ -67,41 +74,35 @@ function App() {
           </div>
         </div>
 
-
-
-        <div>
-          <form>
-            <input type="text" name="url" placeholder="Shorten a link here..." value={url} 
+        <div className="section-container form flex flex-col desktop:flex-row">
+          <div className="form_element desktop:w-4/6">
+            <input className={inputError.length > 0 ? "error": ""} type="text" name="url" placeholder="Shorten a link here..." value={url} 
               onChange={inputOnChangeHandler}
               />
-            <button onClick={buttonClickHandler}>Shorten It</button>
-          </form>
-          <div>
-            {error.length > 0 && (
-              <div>{error}</div>
+            {inputError.length > 0 && (
+              <div className="error_text">{inputError}</div>
             )}
           </div>
-          <div>
-            {shortUrls.map(shortUrl => {
-              return (
-                <div>{shortUrl.short_link}</div>
-              )
-            })}
+          <div className="form_element desktop:w-1/6">
+            <button className="btn" onClick={buttonClickHandler}>Shorten It</button>
           </div>
         </div>
 
+        {shortUrls.length > 0 && (
+          <div className="section-container bg-grey">
+          <>
+            {shortUrls.map((shortUrl, idx) => {
+              return (
+                <UrlCard shortUrl={shortUrl} longUrl={longUrls[idx]}/>
+              )
+            })}
+          </>
+        </div>
+        )}
 
       </main>
-
-
-
-
     <div>
   
-  Shorten a link here...
-
-  Shorten It!
-
   Advanced Statistics
 
   Track how your links are performing across the web with our 
@@ -155,5 +156,20 @@ function App() {
     </div>
   );
 }
+
+/*
+          <div>
+            {error.length > 0 && (
+              <div>{error}</div>
+            )}
+          </div>
+          <div>
+            {shortUrls.map(shortUrl => {
+              return (
+                <div>{shortUrl.short_link}</div>
+              )
+            })}
+          </div>
+*/
 
 export default App;
