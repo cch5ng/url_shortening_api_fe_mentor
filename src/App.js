@@ -67,35 +67,18 @@ function App() {
           </div>
         </div>
 
-
-
-        <div>
-          <form>
+        <div className="section-container form flex flex-col desktop:flex-row">
+          <div className="form_element desktop:w-4/6">
             <input type="text" name="url" placeholder="Shorten a link here..." value={url} 
               onChange={inputOnChangeHandler}
               />
-            <button onClick={buttonClickHandler}>Shorten It</button>
-          </form>
-          <div>
-            {error.length > 0 && (
-              <div>{error}</div>
-            )}
           </div>
-          <div>
-            {shortUrls.map(shortUrl => {
-              return (
-                <div>{shortUrl.short_link}</div>
-              )
-            })}
+          <div className="form_element desktop:w-1/6">
+            <button className="btn" onClick={buttonClickHandler}>Shorten It</button>
           </div>
         </div>
 
-
       </main>
-
-
-
-
     <div>
   
   Shorten a link here...
@@ -155,5 +138,20 @@ function App() {
     </div>
   );
 }
+
+/*
+          <div>
+            {error.length > 0 && (
+              <div>{error}</div>
+            )}
+          </div>
+          <div>
+            {shortUrls.map(shortUrl => {
+              return (
+                <div>{shortUrl.short_link}</div>
+              )
+            })}
+          </div>
+*/
 
 export default App;
