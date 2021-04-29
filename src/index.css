@@ -82,6 +82,14 @@ input {
   border-radius: 12px;
 }
 
+.long_url {
+  border-bottom: 1px solid theme('colors.violet.neutral');
+}
+
+.short_url {
+  color: theme('colors.cyan');
+}
+
 @media (min-width: 1220px) {
 
   .form {
