@@ -83,12 +83,7 @@ function App() {
           </div>
         </div>
 
-        <div className="section-container">
-          <div>
-            {error.length > 0 && (
-              <div>{error}</div>
-            )}
-          </div>
+        <div className="section-container bg-grey">
           <>
             {shortUrls.map((shortUrl, idx) => {
               return (
