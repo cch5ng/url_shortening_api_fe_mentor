@@ -6,8 +6,6 @@
   --color-violet-darkest: theme('colors.violet.darkest');
   --color-violet-dark: theme('colors.violet.dark');
   --color-violet-neutral: theme('colors.violet.neutral');
-
-  /* ... */
 }
 
 @tailwind base;
@@ -40,6 +38,12 @@
     font-size: 1.4rem;
     color: theme('colors.violet.dark');
   }
+
+  h4 {
+    margin: 1.0rem 0;
+    font-weight: 700;
+    font-size: 1.0rem;
+  }
 }
 
 body {
@@ -49,6 +53,10 @@ body {
 
 .section-container {
   padding: 5%;
+}
+
+svg.logo_footer path {
+  fill: #fff;
 }
 
 .hero-text {
@@ -147,6 +155,14 @@ input {
   padding-top: 25px;
 }
 
+footer {
+  background-color: theme('colors.blue.darkest');
+}
+
+.footer_link {
+  font-size: 15px;
+}
+
 @media (min-width: 1220px) {
 
   .form {
@@ -181,8 +197,3 @@ input {
   }
   
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
