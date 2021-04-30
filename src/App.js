@@ -128,7 +128,7 @@ function App() {
 
         <div className="section-container bg-grey">
           <div>
-            <h2>Advanced Statistics</h2>
+            <h2 className="text-violet-dark">Advanced Statistics</h2>
             <div>Track how your links are performing across the web with our advanced statistics dashboard.</div>
           </div>
           <div className="flex flex-col desktop:flex-row desktop:justify-between desktop:mt-8">
@@ -138,6 +138,16 @@ function App() {
           </div>
         </div>
 
+        <div className="section-container bg-violet-dark text-center h-300px flex flex-col 
+          justify-center items-center bg-boost-background-mobile desktop:bg-boost-background-desktop bg-no-repeat bg-cover">
+          <div>
+            <h2 className="text-white text-center">Boost your links today</h2>
+            <button className="btn-round">Get Started</button>
+          </div>
+        </div>
+
+
+
       </main>
     <div>
   
@@ -145,9 +155,9 @@ function App() {
 
   
 
-  Boost your links today
+  
 
-  Get Started
+  
 
   Features
 
