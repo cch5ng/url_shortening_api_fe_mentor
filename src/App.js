@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-//import logo from './logo.svg';
+import logo from './images/logo.svg';
 import './App.css';
 import hero from './images/illustration-working.svg';
 import UrlCard from './components/UrlCard';
@@ -7,6 +7,13 @@ import brandRecognition from './images/icon-brand-recognition.svg';
 import detailedRecords from './images/icon-detailed-records.svg';
 import fullyCustomizable from './images/icon-fully-customizable.svg';
 import StatisticsCard from './components/StatisticsCard';
+import FooterCard from './components/FooterCard';
+import { ReactComponent as LogoSVG } from './images/logo.svg';
+import {ReactComponent as FBIcon} from './images/icon-facebook.svg';
+import {ReactComponent as IGIcon} from './images/icon-instagram.svg';
+import {ReactComponent as PinterestIcon} from './images/icon-pinterest.svg';
+import {ReactComponent as TwitterIcon} from './images/icon-twitter.svg';
+
 
 const STATISTICS_CARDS = [
   { 'heading': 'Brand Recognition',
@@ -22,6 +29,18 @@ const STATISTICS_CARDS = [
     'src': fullyCustomizable,
   }
 ];
+
+const FOOTER_CARDS = [
+  { heading: 'Features',
+    links: ['Link Shortening', 'Branded Links', 'Analytics'],  
+  },
+  { heading: 'Resources',
+    links: ['Blog', 'Developers', 'Support'],  
+  },
+  { heading: 'Company',
+    links: ['About', 'Our Team', 'Careers', 'Contact'],  
+  },
+]
 
 function App() {
   const [url, setUrl] = useState('');
@@ -145,40 +164,23 @@ function App() {
             <button className="btn-round">Get Started</button>
           </div>
         </div>
-
-
-
       </main>
-    <div>
-  
-  
-
-  
-
-  
-
-  
-
-  Features
-
-  Link Shortening
-  Branded Links
-  Analytics
-
-  Resources
-
-  Blog
-  Developers
-  Support
-
-  Company
-
-  About
-  Our Team
-  Careers
-  Contact
-
-      </div>
+      <footer className="flex flex-col p-10 justify-center items-center 
+        desktop:flex-row desktop:justify-between desktop:items-start">
+        <LogoSVG className="logo_footer desktop:w-1/4 desktop:justify-self-center desktop:align-self-top" />
+        <div className="flex flex-col desktop:flex-row desktop:w-1/2 desktop:justify-start
+          desktop:items-start">
+          {FOOTER_CARDS.map(section => (
+            <FooterCard heading={section.heading} links={section.links} />
+          ))}
+        </div>
+        <div className="flex flex-row desktop:w-1/4">
+            <FBIcon className="mx-3"/>
+            <IGIcon className="mx-3"/>
+            <PinterestIcon className="mx-3"/>
+            <TwitterIcon className="mx-3"/>
+        </div>
+      </footer>
 
   <div className="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
