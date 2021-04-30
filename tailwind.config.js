@@ -4,7 +4,6 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    //extend: {},
     screens: {
       'desktop': '1220px',
       // => @media (min-width: 1440px) { ... }
@@ -22,10 +21,18 @@ module.exports = {
       grey: 'hsl(0, 0%, 75%)',
       blue: {
         darkest: 'hsl(255, 11%, 22%)',
-      }
+      },
+      white: '#fff',
     },
     height: {
       '50px': '50px',
+      '300px': '300px',
+    },
+    extend: {
+      backgroundImage: theme => ({
+        'boost-background-mobile': "url('./images/bg-boost-mobile.svg')",
+        'boost-background-desktop': "url('./images/bg-boost-desktop.svg')",
+       })  
     },
   },
   variants: {
