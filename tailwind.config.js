@@ -10,7 +10,10 @@ module.exports = {
     },
     colors: {
       //primary
-      cyan: 'hsl(180, 66%, 49%)',
+      cyan: {
+        'DEFAULT': 'hsl(180, 66%, 49%)',
+        light: '#94e7e7',
+      },
       violet: {
         darkest: 'hsl(260, 8%, 14%)',
         dark: 'hsl(257, 27%, 26%)',
