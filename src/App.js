@@ -115,7 +115,7 @@ function App() {
             <div className="desktop:text-2xl">
               Build your brand’s recognition and get detailed insights on how your links are performing.
             </div>
-            <button className="btn-round">Get Started</button>
+            <button className="btn-round hover:bg-cyan-light">Get Started</button>
           </div>
         </div>
 
@@ -129,7 +129,7 @@ function App() {
             )}
           </div>
           <div className="form_element desktop:w-1/6">
-            <button className="btn" onClick={buttonClickHandler}>Shorten It</button>
+            <button className="btn hover:bg-cyan-light" onClick={buttonClickHandler}>Shorten It</button>
           </div>
         </div>
 
@@ -161,7 +161,7 @@ function App() {
           justify-center items-center bg-boost-background-mobile desktop:bg-boost-background-desktop bg-no-repeat bg-cover">
           <div>
             <h2 className="text-white text-center">Boost your links today</h2>
-            <button className="btn-round">Get Started</button>
+            <button className="btn-round hover:bg-cyan-light">Get Started</button>
           </div>
         </div>
       </main>
@@ -175,10 +175,10 @@ function App() {
           ))}
         </div>
         <div className="flex flex-row desktop:w-1/4">
-            <FBIcon className="mx-3"/>
-            <IGIcon className="mx-3"/>
-            <PinterestIcon className="mx-3"/>
-            <TwitterIcon className="mx-3"/>
+            <FBIcon className="mx-3 social_icon hover:text-cyan"/>
+            <IGIcon className="mx-3 social_icon  hover:text-cyan"/>
+            <PinterestIcon className="mx-3 social_icon  hover:text-cyan"/>
+            <TwitterIcon className="mx-3 social_icon  hover:text-cyan"/>
         </div>
       </footer>
 
