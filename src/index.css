@@ -1,5 +1,6 @@
 :root {
-  --color-cyan: theme('colors.cyan');
+  --color-cyan: theme('colors.cyan.DEFAULT');
+  --color-cyan-light: theme('colors.cyan.light');
   --color-red: theme('colors.red');
   --color-grey: theme('colors.grey');
   --color-blue-darkest: theme('colors.blue.darkest');
@@ -59,12 +60,16 @@ svg.logo_footer path {
   fill: #fff;
 }
 
+svg.social_icon path:hover {
+  fill: theme('colors.cyan.DEFAULT');
+}
+
 .hero-text {
   text-align: center;
 }
 
 .btn-round {
-  background-color: theme('colors.cyan');
+  background-color: theme('colors.cyan.DEFAULT');
   color: #fff;
   width: 200px;
   height: 50px;
@@ -107,7 +112,7 @@ input {
 }
 
 .btn {
-  background-color: theme('colors.cyan');
+  background-color: theme('colors.cyan.DEFAULT');
   color: #fff;
   width: 100%;
   height: 50px;
@@ -132,7 +137,7 @@ input {
 }
 
 .short_url {
-  color: theme('colors.cyan');
+  color: theme('colors.cyan.DEFAULT');
 }
 
 .statistics_card_container {

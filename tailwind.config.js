@@ -10,7 +10,10 @@ module.exports = {
     },
     colors: {
       //primary
-      cyan: 'hsl(180, 66%, 49%)',
+      cyan: {
+        'DEFAULT': 'hsl(180, 66%, 49%)',
+        light: '#94e7e7',
+      },
       violet: {
         darkest: 'hsl(260, 8%, 14%)',
         dark: 'hsl(257, 27%, 26%)',
@@ -32,6 +35,8 @@ module.exports = {
       backgroundImage: theme => ({
         'boost-background-mobile': "url('./images/bg-boost-mobile.svg')",
         'boost-background-desktop': "url('./images/bg-boost-desktop.svg')",
+        'shorten-background-mobile': "url('./images/bg-shorten-mobile.svg')",
+        'shorten-background-desktop': "url('./images/bg-shorten-desktop.svg')",
        })  
     },
   },

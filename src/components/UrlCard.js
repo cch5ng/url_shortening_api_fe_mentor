@@ -21,7 +21,7 @@ function UrlCard({longUrl, shortUrl}) {
     });
   }
 
-  const btn_class = isUrlCopied ? "btn_activated btn desktop:btn_small" : "btn desktop:btn_small";
+  const btn_class = isUrlCopied ? "btn_activated btn desktop:btn_small hover:bg-cyan-light" : "btn desktop:btn_small hover:bg-cyan-light";
 
   return (
     <div className="card-container flex flex-col justify-center items-start w-full 

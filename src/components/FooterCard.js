@@ -5,7 +5,7 @@ function FooterCard({heading, links}) {
       <h4 className="text-white">{heading}</h4>
       <>
         {links.map(link => (
-          <div><a className="footer_link" href="">{link}</a></div>
+          <div><a className="footer_link hover:text-cyan" href="">{link}</a></div>
         ))}
       </>
     </div>
