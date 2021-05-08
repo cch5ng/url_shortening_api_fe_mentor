@@ -35,6 +35,8 @@ module.exports = {
       backgroundImage: theme => ({
         'boost-background-mobile': "url('./images/bg-boost-mobile.svg')",
         'boost-background-desktop': "url('./images/bg-boost-desktop.svg')",
+        'shorten-background-mobile': "url('./images/bg-shorten-mobile.svg')",
+        'shorten-background-desktop': "url('./images/bg-shorten-desktop.svg')",
        })  
     },
   },

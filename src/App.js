@@ -119,7 +119,7 @@ function App() {
           </div>
         </div>
 
-        <div className="section-container form flex flex-col desktop:flex-row">
+        <div className="section-container form flex flex-col desktop:flex-row bg-shorten-background-mobile desktop:bg-shorten-background-desktop bg-no-repeat bg-cover">
           <div className="form_element desktop:w-4/6">
             <input className={inputError.length > 0 ? "error": ""} type="text" name="url" placeholder="Shorten a link here..." value={url} 
               onChange={inputOnChangeHandler}
