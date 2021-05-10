@@ -1,4 +1,6 @@
 import {useState, useEffect} from 'react';
+import { GiHamburgerMenu } from "react-icons/gi";
+
 import logo from './images/logo.svg';
 import './App.css';
 import hero from './images/illustration-working.svg';
@@ -93,14 +95,15 @@ function App() {
 
   return (
     <div className="App">
-      <header> 
-        <div>logo</div>
-        <div>
+      <header className="header-container flex flex-row justify-between"> 
+        <LogoSVG />
+        <GiHamburgerMenu className="desktop:hidden" />
+        <div className="invisible desktop:visible">
           Features
           Pricing
           Resources          
         </div>
-        <div>
+        <div className="invisible desktop:visible">
           Login
           Sign Up
         </div>
