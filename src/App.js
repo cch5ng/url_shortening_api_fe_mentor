@@ -49,6 +49,9 @@ function App() {
   const [longUrls, setLongUrls] = useState([]);
   const [shortUrls, setShortUrls] = useState([]);
   const [inputError, setInputError] = useState('');
+  const [navIsShown, setNavIsShown] = useState(false);
+
+  const navClassName = navIsShown ? `nav-mobile-container desktop:hidden` : `nav-mobile-container hidden desktop:hidden`;
 
   const inputOnChangeHandler = (ev) => {
     const {name, value} = ev.target;
@@ -93,20 +96,35 @@ function App() {
     }
   }
 
+  const toggleNavDisplay = (ev) => {
+    setNavIsShown(!navIsShown);
+  }
+
   return (
     <div className="App">
-      <header className="header-container flex flex-row justify-between"> 
-        <LogoSVG />
-        <GiHamburgerMenu className="desktop:hidden" />
-        <div className="invisible desktop:visible">
-          Features
-          Pricing
-          Resources          
+      <header className="header-container">
+        <div className="header-top-container flex flex-row justify-between">
+          <LogoSVG />
+          <GiHamburgerMenu className="hamburger-icon desktop:hidden" onClick={toggleNavDisplay} />
+          <div className="hidden desktop:flex desktop:flex-row">
+            <div>Features</div>
+            <div>Pricing</div>
+            <div>Resources</div>    
+          </div>
+          <div className="hidden desktop:flex desktop:flex-row">
+            <div>Login</div>
+            <div>Sign Up</div>
+          </div>
         </div>
-        <div className="invisible desktop:visible">
-          Login
-          Sign Up
-        </div>
+        <nav className={navClassName}>
+          <h4>Features</h4>
+          <h4>Pricing</h4>
+          <h4>Resources</h4>    
+          <h4>Login</h4>
+          <div>
+            <button className="btn-round hover:bg-cyan-light" >Sign Up</button>
+          </div>
+        </nav>
       </header>
       <main>
         <div className="section-container desktop:flex desktop:flex-row-reverse">

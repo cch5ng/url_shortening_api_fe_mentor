@@ -52,8 +52,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.section-container {
+.section-container,
+.header-container {
   padding: 5%;
+}
+
+.hamburger-icon {
+  font-size: 1.7rem;
+}
+
+.nav-mobile-container {
+  background-color: theme('colors.violet.dark');
+  padding: 5%;
+  margin-top: 5%;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
 }
 
 svg.logo_footer path {
