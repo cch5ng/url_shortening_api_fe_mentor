@@ -1,4 +1,6 @@
 import {useState, useEffect} from 'react';
+import { GiHamburgerMenu } from "react-icons/gi";
+
 import logo from './images/logo.svg';
 import './App.css';
 import hero from './images/illustration-working.svg';
@@ -47,6 +49,9 @@ function App() {
   const [longUrls, setLongUrls] = useState([]);
   const [shortUrls, setShortUrls] = useState([]);
   const [inputError, setInputError] = useState('');
+  const [navIsShown, setNavIsShown] = useState(false);
+
+  const navClassName = navIsShown ? `nav-mobile-container desktop:hidden` : `nav-mobile-container hidden desktop:hidden`;
 
   const inputOnChangeHandler = (ev) => {
     const {name, value} = ev.target;
@@ -91,19 +96,35 @@ function App() {
     }
   }
 
+  const toggleNavDisplay = (ev) => {
+    setNavIsShown(!navIsShown);
+  }
+
   return (
     <div className="App">
-      <header> 
-        <div>logo</div>
-        <div>
-          Features
-          Pricing
-          Resources          
+      <header className="header-container">
+        <div className="header-top-container flex flex-row justify-between desktop:justify-end desktop:align-middle">
+          <LogoSVG className="logo_header desktop:w-1/6 desktop:justify-end"/>
+          <GiHamburgerMenu className="hamburger-icon desktop:hidden" onClick={toggleNavDisplay} />
+          <div className="hidden desktop:flex desktop:flex-row desktop:w-2/6 desktop:justify-self-start desktop:-mt-2">
+            <h4 className="header-nav-element hover:text-violet-dark">Features</h4>
+            <h4 className="header-nav-element hover:text-violet-dark">Pricing</h4>
+            <h4 className="header-nav-element hover:text-violet-dark">Resources</h4>    
+          </div>
+          <div className="hidden desktop:flex desktop:flex-row desktop:w-3/6 desktop:justify-end desktop:-mt-2">
+            <h4 className="header-nav-element hover:text-violet-dark">Login</h4>
+            <button className="btn-round-nav hover:bg-cyan-light">Sign Up</button>
+          </div>
         </div>
-        <div>
-          Login
-          Sign Up
-        </div>
+        <nav className={navClassName}>
+          <h4>Features</h4>
+          <h4>Pricing</h4>
+          <h4>Resources</h4>    
+          <h4>Login</h4>
+          <div>
+            <button className="btn-round hover:bg-cyan-light" >Sign Up</button>
+          </div>
+        </nav>
       </header>
       <main>
         <div className="section-container desktop:flex desktop:flex-row-reverse">
