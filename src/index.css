@@ -102,6 +102,17 @@ svg.social_icon path:hover {
   font-weight: 700;
 }
 
+.btn-round-nav {
+  background-color: theme('colors.cyan.DEFAULT');
+  color: #fff;
+  width: 125px;
+  height: 50px;
+  padding: 0 25px;
+  border-radius: 25px;
+  font-size: 1.0rem;
+  font-weight: 700;
+}
+
 .form {
   /* display: flex;
   flex-flow: column wrap; */

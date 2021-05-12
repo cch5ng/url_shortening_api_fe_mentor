@@ -113,7 +113,7 @@ function App() {
           </div>
           <div className="hidden desktop:flex desktop:flex-row desktop:w-3/6 desktop:justify-end desktop:-mt-2">
             <h4 className="header-nav-element hover:text-violet-dark">Login</h4>
-            <h4 className="header-nav-element hover:text-violet-dark">Sign Up</h4>
+            <button className="btn-round-nav hover:bg-cyan-light">Sign Up</button>
           </div>
         </div>
         <nav className={navClassName}>
