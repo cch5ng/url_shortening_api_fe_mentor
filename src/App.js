@@ -103,17 +103,17 @@ function App() {
   return (
     <div className="App">
       <header className="header-container">
-        <div className="header-top-container flex flex-row justify-between">
-          <LogoSVG />
+        <div className="header-top-container flex flex-row justify-between desktop:justify-end desktop:align-middle">
+          <LogoSVG className="logo_header desktop:w-1/6 desktop:justify-end"/>
           <GiHamburgerMenu className="hamburger-icon desktop:hidden" onClick={toggleNavDisplay} />
-          <div className="hidden desktop:flex desktop:flex-row">
-            <div>Features</div>
-            <div>Pricing</div>
-            <div>Resources</div>    
+          <div className="hidden desktop:flex desktop:flex-row desktop:w-2/6 desktop:justify-self-start desktop:-mt-2">
+            <h4 className="header-nav-element hover:text-violet-dark">Features</h4>
+            <h4 className="header-nav-element hover:text-violet-dark">Pricing</h4>
+            <h4 className="header-nav-element hover:text-violet-dark">Resources</h4>    
           </div>
-          <div className="hidden desktop:flex desktop:flex-row">
-            <div>Login</div>
-            <div>Sign Up</div>
+          <div className="hidden desktop:flex desktop:flex-row desktop:w-3/6 desktop:justify-end desktop:-mt-2">
+            <h4 className="header-nav-element hover:text-violet-dark">Login</h4>
+            <h4 className="header-nav-element hover:text-violet-dark">Sign Up</h4>
           </div>
         </div>
         <nav className={navClassName}>
